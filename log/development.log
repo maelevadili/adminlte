@@ -1,0 +1,2462 @@
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-24 14:21:54.139093', '2024-05-24 14:21:54.139096') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCustomers (20240524142020)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar, "lastname" varchar, "email" varchar, "phone" varchar, "date_of_birth" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240524142020') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (1.5ms)[0m  [1m[32mINSERT INTO "customers" ("firstname", "lastname", "email", "phone", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["firstname", "Jane"], ["lastname", "DOE"], ["email", "jane@unknown.com"], ["phone", "+33690485590"], ["date_of_birth", nil], ["created_at", "2024-05-24 14:22:01.131265"], ["updated_at", "2024-05-24 14:22:01.131265"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("firstname", "lastname", "email", "phone", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["firstname", "Bob"], ["lastname", "SPONGE"], ["email", "bob@ocean.com"], ["phone", "+33682940052"], ["date_of_birth", nil], ["created_at", "2024-05-24 14:22:01.137810"], ["updated_at", "2024-05-24 14:22:01.137810"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("firstname", "lastname", "email", "phone", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["firstname", "Mickey"], ["lastname", "MICE"], ["email", "mickey@disney.com"], ["phone", "+33683905564"], ["date_of_birth", nil], ["created_at", "2024-05-24 14:22:01.140505"], ["updated_at", "2024-05-24 14:22:01.140505"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("firstname", "lastname", "email", "phone", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["firstname", "Maëlla"], ["lastname", "DÉGRAS"], ["email", "mdegras@myrezapp.com"], ["phone", "+33600000000"], ["date_of_birth", nil], ["created_at", "2024-05-24 14:22:01.143544"], ["updated_at", "2024-05-24 14:22:01.143544"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("firstname", "lastname", "email", "phone", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["firstname", "Mike"], ["lastname", "TYSON"], ["email", "uppercut@mike.com"], ["phone", "+33857894456"], ["date_of_birth", nil], ["created_at", "2024-05-24 14:22:01.145805"], ["updated_at", "2024-05-24 14:22:01.145805"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/customers" for ::1 at 2024-05-24 16:22:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:6
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 326)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered customers/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 18559)
+  Rendered layout layouts/application.html.erb (Duration: 436.0ms | Allocations: 121854)
+Completed 200 OK in 506ms (Views: 444.8ms | ActiveRecord: 4.7ms | Allocations: 134941)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 16:23:24 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 267)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 9652)
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | Allocations: 25478)
+Completed 200 OK in 71ms (Views: 63.2ms | ActiveRecord: 2.1ms | Allocations: 27372)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 16:24:10 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 7426)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 26792)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.9ms | Allocations: 28668)
+
+
+  
+ActionView::Template::Error (The asset "AdminLTELogo.png" is not present in the asset pipeline.
+):
+    160:       <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    161:         <!-- Brand Logo -->
+    162:         <a href="#" class="brand-link">
+    163:           <%= image_tag('AdminLTELogo.png', alt: 'AdminLTE logo', class: 'brand-image') %>
+    164:         </a>
+    165: 
+    166:         <!-- Sidebar -->
+  
+app/views/layouts/application.html.erb:163
+Started GET "/customers" for ::1 at 2024-05-24 16:25:34 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 7493)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 26058)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.3ms | Allocations: 27921)
+
+
+  
+ActionView::Template::Error (The asset "user1-128x128.jpg" is not present in the asset pipeline.
+):
+    168:           <!-- Sidebar user (optional) -->
+    169:           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    170:             <div class="image">
+    171:               <%= image_tag('user1-128x128.jpg', alt: 'User Image', class: 'img-circle elevation-2') %>
+    172:             </div>
+    173:             <div class="info">
+    174:               <a href="#" class="d-block">Alexander Pierce</a>
+  
+app/views/layouts/application.html.erb:171
+Started GET "/customers" for ::1 at 2024-05-24 16:25:48 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 7484)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 24288)
+Completed 200 OK in 39ms (Views: 32.9ms | ActiveRecord: 2.2ms | Allocations: 26173)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 16:25:48 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 16:25:48 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 16:25:48 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 16:25:48 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 16:25:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 16:25:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 16:25:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 16:35:57 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2750)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4044)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 3.5ms | Allocations: 4359)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 16:35:57 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 16:35:57 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 16:35:57 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 16:35:57 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 16:35:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 16:35:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 16:35:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 16:36:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.6ms | Allocations: 291)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 18467)
+  Rendered layout layouts/application.html.erb (Duration: 393.8ms | Allocations: 132373)
+Completed 200 OK in 438ms (Views: 399.5ms | ActiveRecord: 2.1ms | Allocations: 142483)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 16:36:13 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 16:36:13 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 16:36:13 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 16:36:13 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 16:36:13 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 16:36:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 16:36:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/layout/boxed.html" for ::1 at 2024-05-24 16:36:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/boxed.html"):
+  
+Started GET "/examples/legacy-user-menu.html" for ::1 at 2024-05-24 16:36:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/examples/legacy-user-menu.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 16:37:55 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 7509)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 27490)
+Completed 200 OK in 51ms (Views: 43.7ms | ActiveRecord: 2.0ms | Allocations: 29381)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 16:37:55 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 16:37:55 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 16:37:55 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 16:37:55 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 16:37:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 16:37:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 16:37:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/index.html" for ::1 at 2024-05-24 17:45:31 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 17:46:32 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 6954)
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 28824)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 2.9ms | Allocations: 30692)
+
+
+  
+ActionView::Template::Error (The asset "user1-128x128.jpg" is not present in the asset pipeline.
+):
+    169:           <!-- Sidebar user (optional) -->
+    170:           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    171:             <!-- <div class="image">
+    172:               <%= image_tag('user1-128x128.jpg', alt: 'User Image', class: 'img-circle elevation-2') %>
+    173:             </div>  -->
+    174:             <div class="info">
+    175:               <a href="#" class="d-block">Alexander Pierce</a>
+  
+app/views/layouts/application.html.erb:172
+Started GET "/customers" for ::1 at 2024-05-24 17:47:18 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 7496)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 27449)
+Completed 200 OK in 40ms (Views: 33.6ms | ActiveRecord: 2.9ms | Allocations: 29335)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 17:47:18 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 17:47:18 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 17:47:18 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 17:47:18 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 17:47:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 17:47:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 17:47:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 17:47:42 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.5ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 7493)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 27445)
+Completed 200 OK in 45ms (Views: 37.8ms | ActiveRecord: 3.4ms | Allocations: 29332)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 17:47:43 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 17:47:43 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 17:47:43 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 17:47:43 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 17:47:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 17:47:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 17:47:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/UI/buttons.html" for ::1 at 2024-05-24 17:47:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/UI/buttons.html"):
+  
+Started GET "/UI/sliders.html" for ::1 at 2024-05-24 17:47:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/UI/sliders.html"):
+  
+Started GET "/UI/modals.html" for ::1 at 2024-05-24 17:47:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/UI/modals.html"):
+  
+Started GET "/charts/inline.html" for ::1 at 2024-05-24 17:47:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/charts/inline.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 17:47:59 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 5209)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.1ms | Allocations: 5501)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 17:47:59 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 17:47:59 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 17:47:59 +0200
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 17:47:59 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 17:47:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 17:48:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 17:48:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/charts/chartjs.html" for ::1 at 2024-05-24 17:48:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/charts/chartjs.html"):
+  
+Started GET "/charts/inline.html" for ::1 at 2024-05-24 17:48:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/charts/inline.html"):
+  
+Started GET "/customers/1" for ::1 at 2024-05-24 17:51:03 +0200
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:63:in `set_customer'
+  Rendering layout layouts/application.html.erb
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1087)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 6154)
+Completed 200 OK in 88ms (Views: 53.7ms | ActiveRecord: 1.1ms | Allocations: 11966)
+
+
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 17:51:03 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 17:51:03 +0200
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 17:51:03 +0200
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 17:51:03 +0200
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 17:51:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 17:51:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 17:51:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 17:51:11 +0200
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 17:51:11 +0200
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 17:51:11 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 17:51:11 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 17:51:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 17:51:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 17:51:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:03:43 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (5.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 1.3ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 46.7ms | Allocations: 6951)
+  Rendered layout layouts/application.html.erb (Duration: 150.1ms | Allocations: 28900)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 8.1ms | Allocations: 30758)
+
+
+  
+ActionView::Template::Error (The asset "AdminLTELogo.png" is not present in the asset pipeline.
+):
+    161:       <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    162:         <!-- Brand Logo -->
+    163:         <a href="#" class="brand-link">
+    164:           <%= image_tag('AdminLTELogo.png', alt: 'AdminLTE logo', class: 'brand-image') %>
+    165:         </a>
+    166: 
+    167:         <!-- Sidebar -->
+  
+app/views/layouts/application.html.erb:164
+Started GET "/customers" for ::1 at 2024-05-24 18:04:07 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 7493)
+  Rendered layout layouts/application.html.erb (Duration: 59.2ms | Allocations: 27433)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 3.5ms | Allocations: 29320)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:04:07 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:04:07 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:04:07 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 18:04:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/asminlte/dist/img/user1-128x128.jpg"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 18:04:08 +0200
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 18:04:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 18:04:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/examples/contacts.html" for ::1 at 2024-05-24 18:04:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/examples/contacts.html"):
+  
+Started GET "/tables/data.html" for ::1 at 2024-05-24 18:04:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/tables/data.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:04:41 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 7482)
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 27420)
+Completed 200 OK in 59ms (Views: 50.1ms | ActiveRecord: 4.2ms | Allocations: 29310)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:04:42 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:04:42 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:04:42 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 18:04:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 18:04:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 18:04:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 18:04:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/examples/404.html" for ::1 at 2024-05-24 18:04:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/examples/404.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:05:50 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2307)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5209)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5500)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:05:50 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:05:50 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:05:50 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 18:05:50 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 18:05:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 18:05:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 18:05:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/index2.html" for ::1 at 2024-05-24 18:05:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index2.html"):
+  
+Started GET "/widgets.html" for ::1 at 2024-05-24 18:05:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/widgets.html"):
+  
+Started GET "/tables/simple.html" for ::1 at 2024-05-24 18:05:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/tables/simple.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:16:02 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (3.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 6960)
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 28797)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 5.0ms | Allocations: 30655)
+
+
+  
+ActionView::Template::Error (The asset "AdminLTELogo.png" is not present in the asset pipeline.
+):
+    161:       <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    162:         <!-- Brand Logo -->
+    163:         <a href="#" class="brand-link">
+    164:           <%= image_tag('AdminLTELogo.png', alt: 'AdminLTE logo', class: 'brand-image') %>
+    165:         </a>
+    166: 
+    167:         <!-- Sidebar -->
+  
+app/views/layouts/application.html.erb:164
+Started GET "/customers" for ::1 at 2024-05-24 18:17:49 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 1.0ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 7502)
+  Rendered layout layouts/application.html.erb (Duration: 76.5ms | Allocations: 27427)
+Completed 200 OK in 89ms (Views: 77.3ms | ActiveRecord: 3.7ms | Allocations: 29313)
+
+
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:17:49 +0200
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:17:49 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:17:49 +0200
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 18:17:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 18:17:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 18:17:50 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 18:17:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:20:02 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 7496)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 27455)
+Completed 200 OK in 66ms (Views: 55.4ms | ActiveRecord: 5.1ms | Allocations: 29342)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:20:03 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:20:03 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:20:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/plugins/jquery/jquery.min.js" for ::1 at 2024-05-24 18:20:03 +0200
+Started GET "/dist/js/adminlte.min.js" for ::1 at 2024-05-24 18:20:03 +0200
+Started GET "/plugins/bootstrap/js/bootstrap.bundle.min.js" for ::1 at 2024-05-24 18:20:03 +0200
+Started GET "/dist/js/demo.js" for ::1 at 2024-05-24 18:20:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/adminlte.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/plugins/jquery/jquery.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/js/demo.js"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:20:59 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 7493)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 27422)
+Completed 200 OK in 61ms (Views: 49.4ms | ActiveRecord: 3.9ms | Allocations: 29312)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:20:59 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:20:59 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:20:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers/new" for ::1 at 2024-05-24 18:23:28 +0200
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 15.8ms | Allocations: 3586)
+  Rendered customers/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 3910)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 23857)
+Completed 200 OK in 61ms (Views: 49.4ms | ActiveRecord: 2.1ms | Allocations: 29594)
+
+
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:23:28 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:23:28 +0200
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:23:28 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:23:30 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:23:30 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:23:30 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:25:42 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 222)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 3438)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 23406)
+Completed 200 OK in 73ms (Views: 70.9ms | ActiveRecord: 0.3ms | Allocations: 23840)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:25:42 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:25:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:25:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:27:38 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2299)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 5199)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 5469)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:27:38 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:27:38 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:27:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:28:33 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:28
+  Rendered customers/_form.html.erb (Duration: 3.5ms | Allocations: 2475)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 9615)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 9702)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.3ms | Allocations: 11559)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass
+
+'.freeze;   if customer.errors.any? 
+                       ^^^^^^^):
+    1: <%= form_with(model: customer) do |form| %>
+    2:   <% if customer.errors.any? %>
+    3:     <div style="color: red">
+    4:       <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+    5: 
+  
+app/views/customers/_form.html.erb:2
+app/views/customers/_form.html.erb:1
+app/views/customers/index.html.erb:167
+Started GET "/customers" for ::1 at 2024-05-24 18:28:56 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:26
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 7481)
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | Allocations: 27407)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 2.6ms | Allocations: 29293)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:28:57 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:28:57 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:28:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:30:31 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.6ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 7539)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 27464)
+Completed 200 OK in 62ms (Views: 53.7ms | ActiveRecord: 3.4ms | Allocations: 29350)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:30:32 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:30:32 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:30:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:31:39 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 7550)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 27477)
+Completed 200 OK in 54ms (Views: 46.9ms | ActiveRecord: 3.1ms | Allocations: 29367)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:31:39 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:31:39 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:31:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:33:32 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 1.1ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 7561)
+  Rendered layout layouts/application.html.erb (Duration: 71.5ms | Allocations: 27486)
+Completed 200 OK in 81ms (Views: 70.8ms | ActiveRecord: 4.4ms | Allocations: 29376)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:33:33 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:33:33 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:33:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:37:03 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 233)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 86.0ms | Allocations: 7556)
+  Rendered layout layouts/application.html.erb (Duration: 137.8ms | Allocations: 27484)
+Completed 200 OK in 151ms (Views: 136.1ms | ActiveRecord: 5.2ms | Allocations: 29374)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:37:03 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:37:03 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:37:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:37:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 18549)
+  Rendered layout layouts/application.html.erb (Duration: 189.9ms | Allocations: 74170)
+Completed 200 OK in 231ms (Views: 194.3ms | ActiveRecord: 2.6ms | Allocations: 84282)
+
+
+Started GET "/dist/img/user1-128x128.jpg" for ::1 at 2024-05-24 18:37:39 +0200
+Started GET "/dist/img/user8-128x128.jpg" for ::1 at 2024-05-24 18:37:39 +0200
+Started GET "/dist/img/user3-128x128.jpg" for ::1 at 2024-05-24 18:37:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user1-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user8-128x128.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dist/img/user3-128x128.jpg"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:48:52 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 2.8ms | Allocations: 230)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 24.4ms | Allocations: 7014)
+  Rendered layout layouts/application.html.erb (Duration: 67.0ms | Allocations: 26941)
+Completed 200 OK in 85ms (Views: 67.5ms | ActiveRecord: 3.2ms | Allocations: 28832)
+
+
+Started GET "/customers/new" for ::1 at 2024-05-24 18:48:58 +0200
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 14.5ms | Allocations: 3133)
+  Rendered customers/new.html.erb within layouts/application (Duration: 16.1ms | Allocations: 3422)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 6419)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 6840)
+
+
+Started GET "/layout/fixed-sidebar.html" for ::1 at 2024-05-24 18:48:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/fixed-sidebar.html"):
+  
+Started GET "/layout/boxed.html" for ::1 at 2024-05-24 18:49:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/boxed.html"):
+  
+Started GET "/layout/top-nav-sidebar.html" for ::1 at 2024-05-24 18:49:03 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/top-nav-sidebar.html"):
+  
+Started GET "/layout/collapsed-sidebar.html" for ::1 at 2024-05-24 18:49:05 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/collapsed-sidebar.html"):
+  
+Started GET "/gallery.html" for ::1 at 2024-05-24 18:50:06 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/gallery.html"):
+  
+Started GET "/examples/pace.html" for ::1 at 2024-05-24 18:50:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/examples/pace.html"):
+  
+Started GET "/iframe.html" for ::1 at 2024-05-24 18:50:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/iframe.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:50:47 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 7567)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 27492)
+Completed 200 OK in 63ms (Views: 52.8ms | ActiveRecord: 4.9ms | Allocations: 29381)
+
+
+Started GET "/index3.html" for ::1 at 2024-05-24 18:50:52 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/index3.html" for ::1 at 2024-05-24 18:50:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/index3.html" for ::1 at 2024-05-24 18:51:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/index3.html" for ::1 at 2024-05-24 18:51:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/index3.html" for ::1 at 2024-05-24 18:51:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:51:39 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 231)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 7580)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 27506)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 2.7ms | Allocations: 29394)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:51:42 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2306)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 5179)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms | Allocations: 5472)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:51:45 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5198)
+Completed 200 OK in 67ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 5474)
+
+
+Started GET "/index3.html" for ::1 at 2024-05-24 18:51:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/index3.html" for ::1 at 2024-05-24 18:51:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/widgets.html" for ::1 at 2024-05-24 18:52:27 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/widgets.html"):
+  
+Started GET "/layout/top-nav-sidebar.html" for ::1 at 2024-05-24 18:52:28 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/top-nav-sidebar.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:54:26 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 7585)
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 27509)
+Completed 200 OK in 75ms (Views: 63.5ms | ActiveRecord: 4.3ms | Allocations: 29397)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:56:24 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 8237)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 28146)
+Completed 200 OK in 67ms (Views: 57.3ms | ActiveRecord: 4.0ms | Allocations: 30032)
+
+
+Started GET "/customers/1" for ::1 at 2024-05-24 18:56:27 +0200
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:63:in `set_customer'
+  Rendering layout layouts/application.html.erb
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1077)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4058)
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 7002)
+
+
+Started GET "/customers/1" for ::1 at 2024-05-24 18:56:30 +0200
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:63:in `set_customer'
+  Rendering layout layouts/application.html.erb
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered customers/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 709)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3577)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 4374)
+
+
+Started GET "/customers/1/edit" for ::1 at 2024-05-24 18:56:31 +0200
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:63:in `set_customer'
+  Rendering layout layouts/application.html.erb
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 2.6ms | Allocations: 2117)
+  Rendered customers/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2423)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5291)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 6132)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:56:52 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7550)
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 27459)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 3.0ms | Allocations: 29349)
+
+
+Started GET "/index3.html" for ::1 at 2024-05-24 18:56:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/index3.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:57:31 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2612)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2955)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 5593)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Customers</h3>
+    <div class="card-tools">
+      <!-- Buttons, labels, and many other things can be placed here! -->
+      <!-- Here is a label for example -->
+      <!-- <span class="badge badge-primary">Label</span> -->
+    </div>
+    <!-- /.card-tools -->
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <!-- Customer list and new -->
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Firstname</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Lastname</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Email</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Phone</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="date">Date of birth</th>
+          <th scope="col" class="text-900 pe-1 white-space-nowrap" data-sort="order">Actions</th>
+        </tr>
+      </thead>
+      <% @customers.each do |customer| %>
+        <tbody>
+          <tr>
+            <th><%= customer.firstname %></th>
+            <td><%= customer.lastname.upcase %></td>
+            <td><%= customer.email %></td>
+            <td><%= customer.phone %></td>
+            <td><%= customer.date_of_birth %></td>
+            <td class="py-2 align-middle white-space-nowrap">
+              <div class="btn-group">
+                <button type="button" class="btn btn-info">Actions</button>
+                <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" role="menu" style="">
+                  <%= link_to customer_path(customer.id),
+                    class: "dropdown-item" do %>
+                      <% <i class="fas fa-eye"></i>  %>
+                      Get details
+                    <% end %>
+                  <!-- Customer edit -->
+                    <%= link_to edit_customer_path(customer.id),
+                    class: "dropdown-item" do %>
+                      <% <i class="fas fa-edit"></i>  %>
+                      Edit
+                    <% end %>
+                  <div class="dropdown-divider"></div>
+                    <!-- Customer destroy -->
+                    <%= link_to customer_path(customer.id),
+                      method: :delete,
+                      data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'},
+                      class: "dropdown-item text-danger" do %>
+                        <% <i class="fas fa-trash-alt"></i>  %>
+                        Delete
+                    <% end %>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+    <%= link_to new_customer_path, class: "btn btn-success" do %>
+      <i class="fas fa-plus"></i> Add customer
+    <% end %>
+    <!-- Fullcalendar -->
+    <h2 class="mt-4">Fullcalendar</H2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sticky-top mb-3">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Draggable Events</h4>
+            </div>
+            <div class="card-body">
+              <!-- the events -->
+              <div id="external-events">
+                <div class="external-event bg-success">Lunch</div>
+                <div class="external-event bg-warning">Go home</div>
+                <div class="external-event bg-info">Do homework</div>
+                <div class="external-event bg-primary">Work on UI design</div>
+                <div class="external-event bg-danger">Sleep tight</div>
+                <div class="checkbox">
+                  <label for="drop-remove">
+                    <input type="checkbox" id="drop-remove">
+                    remove after drop
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Create Event</h3>
+            </div>
+            <div class="card-body">
+              <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                <ul class="fc-color-picker" id="color-chooser">
+                  <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                </ul>
+              </div>
+              <!-- /btn-group -->
+              <div class="input-group">
+                <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                <div class="input-group-append">
+                  <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                </div>
+                <!-- /btn-group -->
+              </div>
+              <!-- /input-group -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col -->
+      <div class="col-md-9">
+        <div class="card card-primary">
+          <div class="card-body p-0">
+            <!-- THE CALENDAR -->
+            <div id="calendar"></div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+        </div>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer">
+    The footer of the card
+  </div>
+  <!-- /.card-footer -->
+</div>
+<!-- /.card -->
+
+&nbsp;
+
+<h1>Customers</h1>
+
+<div id="customers">
+  <% @customers.each do |customer| %>
+    <%= render customer %>
+    <p>
+      <%= link_to "Show this customer", customer %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New customer", new_customer_path %>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <div class="card">
+4:      <div class="card-header">
+5:        <h3 class="card-title">Customers</h3>
+6:        <div class="card-tools">
+7:          <!-- Buttons, labels, and many other things can be placed here! -->
+8:          <!-- Here is a label for example -->
+9:          <!-- <span class="badge badge-primary">Label</span> -->
+10:        </div>
+11:        <!-- /.card-tools -->
+12:      </div>
+13:      <!-- /.card-header -->
+14:      <div class="card-body">
+15:        <!-- Customer list and new -->
+16:        <table class="table table-hover text-nowrap">
+17:          <thead>
+18:            <tr>
+19:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Firstname</th>
+20:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Lastname</th>
+21:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Email</th>
+22:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Phone</th>
+23:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="date">Date of birth</th>
+24:              <th scope="col" class="text-900 pe-1 white-space-nowrap" data-sort="order">Actions</th>
+25:            </tr>
+26:          </thead>
+27:          <% @customers.each do |customer| %>
+28:            <tbody>
+29:              <tr>
+30:                <th><%= customer.firstname %></th>
+31:                <td><%= customer.lastname.upcase %></td>
+32:                <td><%= customer.email %></td>
+33:                <td><%= customer.phone %></td>
+34:                <td><%= customer.date_of_birth %></td>
+35:                <td class="py-2 align-middle white-space-nowrap">
+36:                  <div class="btn-group">
+37:                    <button type="button" class="btn btn-info">Actions</button>
+38:                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+39:                      <span class="sr-only">Toggle Dropdown</span>
+40:                    </button>
+41:                    <div class="dropdown-menu" role="menu" style="">
+42:                      <%= link_to customer_path(customer.id),
+43:                        class: "dropdown-item" do %>
+44:                          <% <i class="fas fa-eye"></i>  %>
+45:                          Get details
+46:                        <% end %>
+47:                      <!-- Customer edit -->
+48:                        <%= link_to edit_customer_path(customer.id),
+49:                        class: "dropdown-item" do %>
+50:                          <% <i class="fas fa-edit"></i>  %>
+51:                          Edit
+52:                        <% end %>
+53:                      <div class="dropdown-divider"></div>
+54:                        <!-- Customer destroy -->
+55:                        <%= link_to customer_path(customer.id),
+56:                          method: :delete,
+57:                          data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'},
+58:                          class: "dropdown-item text-danger" do %>
+59:                            <% <i class="fas fa-trash-alt"></i>  %>
+60:                            Delete
+61:                        <% end %>
+62:                    </div>
+63:                  </div>
+64:                </td>
+65:              </tr>
+66:            </tbody>
+67:          <% end %>
+68:        </table>
+69:        <%= link_to new_customer_path, class: "btn btn-success" do %>
+70:          <i class="fas fa-plus"></i> Add customer
+71:        <% end %>
+72:        <!-- Fullcalendar -->
+73:        <h2 class="mt-4">Fullcalendar</H2>
+74:        <div class="row">
+75:          <div class="col-md-3">
+76:            <div class="sticky-top mb-3">
+77:              <div class="card">
+78:                <div class="card-header">
+79:                  <h4 class="card-title">Draggable Events</h4>
+80:                </div>
+81:                <div class="card-body">
+82:                  <!-- the events -->
+83:                  <div id="external-events">
+84:                    <div class="external-event bg-success">Lunch</div>
+85:                    <div class="external-event bg-warning">Go home</div>
+86:                    <div class="external-event bg-info">Do homework</div>
+87:                    <div class="external-event bg-primary">Work on UI design</div>
+88:                    <div class="external-event bg-danger">Sleep tight</div>
+89:                    <div class="checkbox">
+90:                      <label for="drop-remove">
+91:                        <input type="checkbox" id="drop-remove">
+92:                        remove after drop
+93:                      </label>
+94:                    </div>
+95:                  </div>
+96:                </div>
+97:                <!-- /.card-body -->
+98:              </div>
+99:              <!-- /.card -->
+100:              <div class="card">
+101:                <div class="card-header">
+102:                  <h3 class="card-title">Create Event</h3>
+103:                </div>
+104:                <div class="card-body">
+105:                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+106:                    <ul class="fc-color-picker" id="color-chooser">
+107:                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+108:                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+109:                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+110:                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+111:                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+112:                    </ul>
+113:                  </div>
+114:                  <!-- /btn-group -->
+115:                  <div class="input-group">
+116:                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+117:    
+118:                    <div class="input-group-append">
+119:                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+120:                    </div>
+121:                    <!-- /btn-group -->
+122:                  </div>
+123:                  <!-- /input-group -->
+124:                </div>
+125:              </div>
+126:            </div>
+127:          </div>
+128:          <!-- /.col -->
+129:          <div class="col-md-9">
+130:            <div class="card card-primary">
+131:              <div class="card-body p-0">
+132:                <!-- THE CALENDAR -->
+133:                <div id="calendar"></div>
+134:              </div>
+135:              <!-- /.card-body -->
+136:            </div>
+137:            <!-- /.card -->
+138:          </div>
+139:          <!-- /.col -->
+140:            </div>
+141:      </div>
+142:      <!-- /.card-body -->
+143:      <div class="card-footer">
+144:        The footer of the card
+145:      </div>
+146:      <!-- /.card-footer -->
+147:    </div>
+148:    <!-- /.card -->
+149:    
+150:    &nbsp;
+151:    
+152:    <h1>Customers</h1>
+153:    
+154:    <div id="customers">
+155:      <% @customers.each do |customer| %>
+156:        <%= render customer %>
+157:        <p>
+158:          <%= link_to "Show this customer", customer %>
+159:        </p>
+160:      <% end %>
+161:    </div>
+162:    
+163:    <%= link_to "New customer", new_customer_path %>
+  
+app/views/customers/index.html.erb:44: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:44: syntax error, unexpected '<'
+app/views/customers/index.html.erb:59: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:59: syntax error, unexpected '<'
+app/views/customers/index.html.erb:62: unknown regexp options - dv
+app/views/customers/index.html.erb:63: syntax error, unexpected '<'
+app/views/customers/index.html.erb:64: unknown regexp options - td
+app/views/customers/index.html.erb:65: syntax error, unexpected '<'
+app/views/customers/index.html.erb:66: unknown regexp options - tbdy
+app/views/customers/index.html.erb:70: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:72: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:79: unknown regexp option - h
+app/views/customers/index.html.erb:79: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:84: unknown regexp options - dv
+app/views/customers/index.html.erb:85: syntax error, unexpected '<'
+app/views/customers/index.html.erb:85: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:86: unknown regexp options - dv
+app/views/customers/index.html.erb:87: syntax error, unexpected '<'
+app/views/customers/index.html.erb:87: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:88: unknown regexp options - dv
+app/views/customers/index.html.erb:89: syntax error, unexpected '<'
+app/views/customers/index.html.erb:90: syntax error, unexpected '<'
+app/views/customers/index.html.erb:91: syntax error, unexpected '<'
+app/views/customers/index.html.erb:91: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:92: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:93: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:94: unknown regexp options - dv
+app/views/customers/index.html.erb:95: syntax error, unexpected '<'
+app/views/customers/index.html.erb:96: unknown regexp options - dv
+app/views/customers/index.html.erb:97: syntax error, unexpected '<'
+app/views/customers/index.html.erb:98: unknown regexp options - dv
+app/views/customers/index.html.erb:99: syntax error, unexpected '<'
+app/views/customers/index.html.erb:102: unknown regexp option - h
+app/views/customers/index.html.erb:102: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:107: syntax error, unexpected '<'
+app/views/customers/index.html.erb:107: unknown regexp option - l
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: unknown regexp option - a
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:109: syntax error, unexpected '<'
+app/views/customers/index.html.erb:109: unknown regexp option - l
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: unknown regexp option - a
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:111: syntax error, unexpected '<'
+app/views/customers/index.html.erb:111: unknown regexp option - l
+app/views/customers/index.html.erb:112: syntax error, unexpected '<'
+app/views/customers/index.html.erb:113: unknown regexp options - dv
+app/views/customers/index.html.erb:114: syntax error, unexpected '<'
+app/views/customers/index.html.erb:119: unknown regexp options - btt
+app/views/customers/index.html.erb:120: syntax error, unexpected '<'
+app/views/customers/index.html.erb:121: unknown regexp options - bt
+app/views/customers/index.html.erb:121: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:123: unknown regexp options - pt
+app/views/customers/index.html.erb:123: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:125: unknown regexp options - dv
+app/views/customers/index.html.erb:126: syntax error, unexpected '<'
+app/views/customers/index.html.erb:127: unknown regexp options - dv
+app/views/customers/index.html.erb:128: syntax error, unexpected '<'
+app/views/customers/index.html.erb:133: unknown regexp options - dv
+app/views/customers/index.html.erb:134: syntax error, unexpected '<'
+app/views/customers/index.html.erb:135: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:137: syntax error, unexpected '\n', expecting `do' for lambda or tLAMBEG
+app/views/customers/index.html.erb:139: syntax error, unexpected '\n', expecting `do' for lambda or tLAMBEG
+app/views/customers/index.html.erb:141: unknown regexp options - dv
+app/views/customers/index.html.erb:142: syntax error, unexpected '<'
+app/views/customers/index.html.erb:145: unknown regexp options - dv
+app/views/customers/index.html.erb:146: syntax error, unexpected '<'
+app/views/customers/index.html.erb:147: unknown regexp options - dv
+app/views/customers/index.html.erb:148: syntax error, unexpected '<'
+app/views/customers/index.html.erb:152: unknown regexp option - h
+app/views/customers/index.html.erb:152: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:157: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:159: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:161: unknown regexp options - dv
+app/views/customers/index.html.erb:166: unterminated string meets end of file
+app/views/customers/index.html.erb:166: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/customers" for ::1 at 2024-05-24 18:57:36 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2589)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2926)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3962)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Customers</h3>
+    <div class="card-tools">
+      <!-- Buttons, labels, and many other things can be placed here! -->
+      <!-- Here is a label for example -->
+      <!-- <span class="badge badge-primary">Label</span> -->
+    </div>
+    <!-- /.card-tools -->
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <!-- Customer list and new -->
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Firstname</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Lastname</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Email</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Phone</th>
+          <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="date">Date of birth</th>
+          <th scope="col" class="text-900 pe-1 white-space-nowrap" data-sort="order">Actions</th>
+        </tr>
+      </thead>
+      <% @customers.each do |customer| %>
+        <tbody>
+          <tr>
+            <th><%= customer.firstname %></th>
+            <td><%= customer.lastname.upcase %></td>
+            <td><%= customer.email %></td>
+            <td><%= customer.phone %></td>
+            <td><%= customer.date_of_birth %></td>
+            <td class="py-2 align-middle white-space-nowrap">
+              <div class="btn-group">
+                <button type="button" class="btn btn-info">Actions</button>
+                <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" role="menu" style="">
+                  <%= link_to customer_path(customer.id),
+                    class: "dropdown-item" do %>
+                      <% <i class="fas fa-eye"></i>  %>
+                      Get details
+                    <% end %>
+                  <!-- Customer edit -->
+                    <%= link_to edit_customer_path(customer.id),
+                    class: "dropdown-item" do %>
+                      <% <i class="fas fa-edit"></i>  %>
+                      Edit
+                    <% end %>
+                  <div class="dropdown-divider"></div>
+                    <!-- Customer destroy -->
+                    <%= link_to customer_path(customer.id),
+                      method: :delete,
+                      data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'},
+                      class: "dropdown-item text-danger" do %>
+                        <% <i class="fas fa-trash-alt"></i>  %>
+                        Delete
+                    <% end %>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+    <%= link_to new_customer_path, class: "btn btn-success" do %>
+      <i class="fas fa-plus"></i> Add customer
+    <% end %>
+    <!-- Fullcalendar -->
+    <h2 class="mt-4">Fullcalendar</H2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sticky-top mb-3">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Draggable Events</h4>
+            </div>
+            <div class="card-body">
+              <!-- the events -->
+              <div id="external-events">
+                <div class="external-event bg-success">Lunch</div>
+                <div class="external-event bg-warning">Go home</div>
+                <div class="external-event bg-info">Do homework</div>
+                <div class="external-event bg-primary">Work on UI design</div>
+                <div class="external-event bg-danger">Sleep tight</div>
+                <div class="checkbox">
+                  <label for="drop-remove">
+                    <input type="checkbox" id="drop-remove">
+                    remove after drop
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Create Event</h3>
+            </div>
+            <div class="card-body">
+              <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                <ul class="fc-color-picker" id="color-chooser">
+                  <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                </ul>
+              </div>
+              <!-- /btn-group -->
+              <div class="input-group">
+                <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                <div class="input-group-append">
+                  <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                </div>
+                <!-- /btn-group -->
+              </div>
+              <!-- /input-group -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col -->
+      <div class="col-md-9">
+        <div class="card card-primary">
+          <div class="card-body p-0">
+            <!-- THE CALENDAR -->
+            <div id="calendar"></div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+        </div>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer">
+    The footer of the card
+  </div>
+  <!-- /.card-footer -->
+</div>
+<!-- /.card -->
+
+&nbsp;
+
+<h1>Customers</h1>
+
+<div id="customers">
+  <% @customers.each do |customer| %>
+    <%= render customer %>
+    <p>
+      <%= link_to "Show this customer", customer %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New customer", new_customer_path %>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <div class="card">
+4:      <div class="card-header">
+5:        <h3 class="card-title">Customers</h3>
+6:        <div class="card-tools">
+7:          <!-- Buttons, labels, and many other things can be placed here! -->
+8:          <!-- Here is a label for example -->
+9:          <!-- <span class="badge badge-primary">Label</span> -->
+10:        </div>
+11:        <!-- /.card-tools -->
+12:      </div>
+13:      <!-- /.card-header -->
+14:      <div class="card-body">
+15:        <!-- Customer list and new -->
+16:        <table class="table table-hover text-nowrap">
+17:          <thead>
+18:            <tr>
+19:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Firstname</th>
+20:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Lastname</th>
+21:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Email</th>
+22:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="order">Phone</th>
+23:              <th scope="col" class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="date">Date of birth</th>
+24:              <th scope="col" class="text-900 pe-1 white-space-nowrap" data-sort="order">Actions</th>
+25:            </tr>
+26:          </thead>
+27:          <% @customers.each do |customer| %>
+28:            <tbody>
+29:              <tr>
+30:                <th><%= customer.firstname %></th>
+31:                <td><%= customer.lastname.upcase %></td>
+32:                <td><%= customer.email %></td>
+33:                <td><%= customer.phone %></td>
+34:                <td><%= customer.date_of_birth %></td>
+35:                <td class="py-2 align-middle white-space-nowrap">
+36:                  <div class="btn-group">
+37:                    <button type="button" class="btn btn-info">Actions</button>
+38:                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+39:                      <span class="sr-only">Toggle Dropdown</span>
+40:                    </button>
+41:                    <div class="dropdown-menu" role="menu" style="">
+42:                      <%= link_to customer_path(customer.id),
+43:                        class: "dropdown-item" do %>
+44:                          <% <i class="fas fa-eye"></i>  %>
+45:                          Get details
+46:                        <% end %>
+47:                      <!-- Customer edit -->
+48:                        <%= link_to edit_customer_path(customer.id),
+49:                        class: "dropdown-item" do %>
+50:                          <% <i class="fas fa-edit"></i>  %>
+51:                          Edit
+52:                        <% end %>
+53:                      <div class="dropdown-divider"></div>
+54:                        <!-- Customer destroy -->
+55:                        <%= link_to customer_path(customer.id),
+56:                          method: :delete,
+57:                          data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'},
+58:                          class: "dropdown-item text-danger" do %>
+59:                            <% <i class="fas fa-trash-alt"></i>  %>
+60:                            Delete
+61:                        <% end %>
+62:                    </div>
+63:                  </div>
+64:                </td>
+65:              </tr>
+66:            </tbody>
+67:          <% end %>
+68:        </table>
+69:        <%= link_to new_customer_path, class: "btn btn-success" do %>
+70:          <i class="fas fa-plus"></i> Add customer
+71:        <% end %>
+72:        <!-- Fullcalendar -->
+73:        <h2 class="mt-4">Fullcalendar</H2>
+74:        <div class="row">
+75:          <div class="col-md-3">
+76:            <div class="sticky-top mb-3">
+77:              <div class="card">
+78:                <div class="card-header">
+79:                  <h4 class="card-title">Draggable Events</h4>
+80:                </div>
+81:                <div class="card-body">
+82:                  <!-- the events -->
+83:                  <div id="external-events">
+84:                    <div class="external-event bg-success">Lunch</div>
+85:                    <div class="external-event bg-warning">Go home</div>
+86:                    <div class="external-event bg-info">Do homework</div>
+87:                    <div class="external-event bg-primary">Work on UI design</div>
+88:                    <div class="external-event bg-danger">Sleep tight</div>
+89:                    <div class="checkbox">
+90:                      <label for="drop-remove">
+91:                        <input type="checkbox" id="drop-remove">
+92:                        remove after drop
+93:                      </label>
+94:                    </div>
+95:                  </div>
+96:                </div>
+97:                <!-- /.card-body -->
+98:              </div>
+99:              <!-- /.card -->
+100:              <div class="card">
+101:                <div class="card-header">
+102:                  <h3 class="card-title">Create Event</h3>
+103:                </div>
+104:                <div class="card-body">
+105:                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+106:                    <ul class="fc-color-picker" id="color-chooser">
+107:                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+108:                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+109:                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+110:                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+111:                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+112:                    </ul>
+113:                  </div>
+114:                  <!-- /btn-group -->
+115:                  <div class="input-group">
+116:                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+117:    
+118:                    <div class="input-group-append">
+119:                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+120:                    </div>
+121:                    <!-- /btn-group -->
+122:                  </div>
+123:                  <!-- /input-group -->
+124:                </div>
+125:              </div>
+126:            </div>
+127:          </div>
+128:          <!-- /.col -->
+129:          <div class="col-md-9">
+130:            <div class="card card-primary">
+131:              <div class="card-body p-0">
+132:                <!-- THE CALENDAR -->
+133:                <div id="calendar"></div>
+134:              </div>
+135:              <!-- /.card-body -->
+136:            </div>
+137:            <!-- /.card -->
+138:          </div>
+139:          <!-- /.col -->
+140:            </div>
+141:      </div>
+142:      <!-- /.card-body -->
+143:      <div class="card-footer">
+144:        The footer of the card
+145:      </div>
+146:      <!-- /.card-footer -->
+147:    </div>
+148:    <!-- /.card -->
+149:    
+150:    &nbsp;
+151:    
+152:    <h1>Customers</h1>
+153:    
+154:    <div id="customers">
+155:      <% @customers.each do |customer| %>
+156:        <%= render customer %>
+157:        <p>
+158:          <%= link_to "Show this customer", customer %>
+159:        </p>
+160:      <% end %>
+161:    </div>
+162:    
+163:    <%= link_to "New customer", new_customer_path %>
+  
+app/views/customers/index.html.erb:44: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:44: syntax error, unexpected '<'
+app/views/customers/index.html.erb:59: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:59: syntax error, unexpected '<'
+app/views/customers/index.html.erb:62: unknown regexp options - dv
+app/views/customers/index.html.erb:63: syntax error, unexpected '<'
+app/views/customers/index.html.erb:64: unknown regexp options - td
+app/views/customers/index.html.erb:65: syntax error, unexpected '<'
+app/views/customers/index.html.erb:66: unknown regexp options - tbdy
+app/views/customers/index.html.erb:70: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:72: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:79: unknown regexp option - h
+app/views/customers/index.html.erb:79: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:84: unknown regexp options - dv
+app/views/customers/index.html.erb:85: syntax error, unexpected '<'
+app/views/customers/index.html.erb:85: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:86: unknown regexp options - dv
+app/views/customers/index.html.erb:87: syntax error, unexpected '<'
+app/views/customers/index.html.erb:87: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:88: unknown regexp options - dv
+app/views/customers/index.html.erb:89: syntax error, unexpected '<'
+app/views/customers/index.html.erb:90: syntax error, unexpected '<'
+app/views/customers/index.html.erb:91: syntax error, unexpected '<'
+app/views/customers/index.html.erb:91: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:92: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:93: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:94: unknown regexp options - dv
+app/views/customers/index.html.erb:95: syntax error, unexpected '<'
+app/views/customers/index.html.erb:96: unknown regexp options - dv
+app/views/customers/index.html.erb:97: syntax error, unexpected '<'
+app/views/customers/index.html.erb:98: unknown regexp options - dv
+app/views/customers/index.html.erb:99: syntax error, unexpected '<'
+app/views/customers/index.html.erb:102: unknown regexp option - h
+app/views/customers/index.html.erb:102: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:107: syntax error, unexpected '<'
+app/views/customers/index.html.erb:107: unknown regexp option - l
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:108: unknown regexp option - a
+app/views/customers/index.html.erb:108: syntax error, unexpected '<'
+app/views/customers/index.html.erb:109: syntax error, unexpected '<'
+app/views/customers/index.html.erb:109: unknown regexp option - l
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: syntax error, unexpected local variable or method, expecting `end'
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:110: unknown regexp option - a
+app/views/customers/index.html.erb:110: syntax error, unexpected '<'
+app/views/customers/index.html.erb:111: syntax error, unexpected '<'
+app/views/customers/index.html.erb:111: unknown regexp option - l
+app/views/customers/index.html.erb:112: syntax error, unexpected '<'
+app/views/customers/index.html.erb:113: unknown regexp options - dv
+app/views/customers/index.html.erb:114: syntax error, unexpected '<'
+app/views/customers/index.html.erb:119: unknown regexp options - btt
+app/views/customers/index.html.erb:120: syntax error, unexpected '<'
+app/views/customers/index.html.erb:121: unknown regexp options - bt
+app/views/customers/index.html.erb:121: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:123: unknown regexp options - pt
+app/views/customers/index.html.erb:123: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:125: unknown regexp options - dv
+app/views/customers/index.html.erb:126: syntax error, unexpected '<'
+app/views/customers/index.html.erb:127: unknown regexp options - dv
+app/views/customers/index.html.erb:128: syntax error, unexpected '<'
+app/views/customers/index.html.erb:133: unknown regexp options - dv
+app/views/customers/index.html.erb:134: syntax error, unexpected '<'
+app/views/customers/index.html.erb:135: syntax error, unexpected unary-, expecting `do' or '{' or '('
+app/views/customers/index.html.erb:137: syntax error, unexpected '\n', expecting `do' for lambda or tLAMBEG
+app/views/customers/index.html.erb:139: syntax error, unexpected '\n', expecting `do' for lambda or tLAMBEG
+app/views/customers/index.html.erb:141: unknown regexp options - dv
+app/views/customers/index.html.erb:142: syntax error, unexpected '<'
+app/views/customers/index.html.erb:145: unknown regexp options - dv
+app/views/customers/index.html.erb:146: syntax error, unexpected '<'
+app/views/customers/index.html.erb:147: unknown regexp options - dv
+app/views/customers/index.html.erb:148: syntax error, unexpected '<'
+app/views/customers/index.html.erb:152: unknown regexp option - h
+app/views/customers/index.html.erb:152: syntax error, unexpected integer literal, expecting `end'
+app/views/customers/index.html.erb:157: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:159: syntax error, unexpected '<', expecting `end'
+app/views/customers/index.html.erb:161: unknown regexp options - dv
+app/views/customers/index.html.erb:166: unterminated string meets end of file
+app/views/customers/index.html.erb:166: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/widgets.html" for ::1 at 2024-05-24 18:57:41 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/widgets.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 18:57:49 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 7556)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 27480)
+Completed 200 OK in 54ms (Views: 47.9ms | ActiveRecord: 3.0ms | Allocations: 29370)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:58:06 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 7514)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 27438)
+Completed 200 OK in 51ms (Views: 43.3ms | ActiveRecord: 2.6ms | Allocations: 29328)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:58:16 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 1.0ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 7462)
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 27429)
+Completed 200 OK in 79ms (Views: 70.1ms | ActiveRecord: 3.7ms | Allocations: 29319)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 18:58:26 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.4ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 26.9ms | Allocations: 7527)
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 27450)
+Completed 200 OK in 84ms (Views: 71.1ms | ActiveRecord: 5.8ms | Allocations: 29340)
+
+
+Started GET "/layout/fixed-sidebar.html" for ::1 at 2024-05-24 18:58:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/layout/fixed-sidebar.html"):
+  
+Started GET "/customers" for ::1 at 2024-05-24 19:01:03 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.4ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 7518)
+  Rendered layout layouts/application.html.erb (Duration: 102.6ms | Allocations: 27447)
+Completed 200 OK in 113ms (Views: 101.8ms | ActiveRecord: 4.6ms | Allocations: 29337)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 19:01:19 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.8ms | Allocations: 231)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 7465)
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 27390)
+Completed 200 OK in 56ms (Views: 49.2ms | ActiveRecord: 3.8ms | Allocations: 29278)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 19:03:41 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 7497)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 27492)
+Completed 200 OK in 73ms (Views: 64.0ms | ActiveRecord: 4.2ms | Allocations: 29382)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 19:04:20 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 1.9ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 28.7ms | Allocations: 7536)
+  Rendered layout layouts/application.html.erb (Duration: 148.6ms | Allocations: 27529)
+Completed 200 OK in 172ms (Views: 161.4ms | ActiveRecord: 3.3ms | Allocations: 29419)
+
+
+Started GET "/customers/new" for ::1 at 2024-05-24 19:04:25 +0200
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 5.4ms | Allocations: 2070)
+  Rendered customers/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2336)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5234)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 5602)
+
+
+Started GET "/customers/new" for ::1 at 2024-05-24 19:04:26 +0200
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 2.4ms | Allocations: 1506)
+  Rendered customers/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1585)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4457)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4733)
+
+
+Started GET "/customers/new" for ::1 at 2024-05-24 19:04:51 +0200
+Processing by CustomersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/_form.html.erb (Duration: 2.3ms | Allocations: 1497)
+  Rendered customers/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1576)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4448)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4724)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 19:05:50 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 7517)
+  Rendered layout layouts/application.html.erb (Duration: 56.7ms | Allocations: 27427)
+Completed 200 OK in 64ms (Views: 56.8ms | ActiveRecord: 2.6ms | Allocations: 29316)
+
+
+Started GET "/customers" for ::1 at 2024-05-24 19:06:26 +0200
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:27
+  Rendered customers/_customer.html.erb (Duration: 0.7ms | Allocations: 229)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered customers/_customer.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered customers/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7503)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 27429)
+Completed 200 OK in 55ms (Views: 47.8ms | ActiveRecord: 3.1ms | Allocations: 29319)
+
+
